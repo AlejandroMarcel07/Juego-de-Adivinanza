@@ -8,7 +8,7 @@
 // input //creamos un variable nombrada igual que el id de la etiqueta del html
  let numeroEntrada = document.getElementById('numeroEntrada')
 
-
+ let btnVerificar = document.getElementById('btnVerificar')
 
 // mensaje //creamos una varaible nombre igual que el id de la etiqueta del html
 let  mensaje = document.getElementById('mensaje') 
@@ -27,14 +27,16 @@ function chequearResultado(){
     }
 
     if(numeroIgresado === numeroAzar){
-        mensaje.textContent = '¡Felicitaciones! ¡Haz adivinado el numero!';
+        mensaje.textContent = '¡Felicitaciones!¡Haz adivinado el numero!';
         mensaje.style.color = 'green';
+        btnVerificar.style.backgroundColor = 'green'
+        numeroEntrada.style.borderColor = 'green'
         numeroEntrada.disabled = true; //desabilitara el inmput una vez adivinado
         return
     } else if(numeroIgresado < numeroAzar){
-        mensaje.textContent = '¡Mas alto! El numero es mayor al que dijistes'
+        mensaje.textContent = '¡Mas alto!'
     } else{
-        mensaje.textContent = '¡Mas bajo! El numero es mas bajo'
+        mensaje.textContent = '¡Mas bajo!'
     }
 
 
